@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中国古代官府建筑 - 古韵栖居</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cinnabar: '#E53E3E', 
+                        pine: '#2D3748', 
+                        bamboo: '#718096', 
+                        rice: '#FAF6ED', 
+                        amber: '#D69E2E', 
+                    },
+                    fontFamily: {
+                        chinese: ['"Ma Shan Zheng"', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
+            .bg-texture {
+                background-image: url('image/guanfu.jpg');
+                background-size: cover;
+                background-position: center;
+                background-blend-mode: overlay;
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+</head>
+<body class="bg-rice font-chinese">
+    <!-- 导航栏 -->
+    <nav class="sticky top-0 z-50 bg-pine/95 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="p1.php" class="text-2xl md:text-3xl font-bold flex items-center">
+                <i class="fa fa-home mr-2 text-amber"></i>
+                <span>古韵栖居</span>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="p1.php" class="nav-link hover:text-amber transition-colors py-2 border-b-2 border-amber">首页</a>
+                <a href="#types" class="nav-link hover:text-amber transition-colors py-2 border-b-2 border-transparent hover:border-amber">官府类型</a>
+                <a href="#features" class="nav-link hover:text-amber transition-colors py-2 border-b-2 border-transparent hover:border-amber">建筑特色</a>
+                <a href="#culture" class="nav-link hover:text-amber transition-colors py-2 border-b-2 border-transparent hover:border-amber">文化内涵</a>
+            </div>
+            <button id="menuBtn" class="md:hidden text-white focus:outline-none">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+        <div id="mobileMenu" class="md:hidden hidden bg-pine/98 text-white">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="p1.php" class="py-2 hover:text-amber transition-colors">首页</a>
+                <a href="#types" class="py-2 hover:text-amber transition-colors">官府类型</a>
+                <a href="#features" class="py-2 hover:text-amber transition-colors">建筑特色</a>
+                <a href="#culture" class="py-2 hover:text-amber transition-colors">文化内涵</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 首页横幅 -->
+    <section id="home" class="relative h-[70vh] md:h-[80vh] bg-texture bg-pine/70 flex items-center justify-center">
+        <div class="absolute inset-0 bg-pine/50"></div>
+        <div class="relative text-center px-4 text-white">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 text-shadow">中国古代官府建筑</h1>
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto text-shadow">威严肃穆承规制，政通人和显威仪</p>
+            <a href="#types" class="mt-8 inline-block bg-amber/90 hover:bg-amber text-pine font-bold py-3 px-8 rounded-lg transition-all">
+                探索官府类型
+            </a>
+        </div>
+    </section>
+
+    <!-- 官府类型介绍 -->
+    <section id="types" class="py-16 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-pine">
+                <i class="fa fa-university text-amber mr-2"></i>
+                中国古代经典官府类型
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 州府衙门 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <img src="image/guanfu/zhoufu.jpg" alt="州府衙门" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-pine mb-3">州府衙门</h3>
+                        <p class="text-bamboo mb-4">
+                            地方行政核心建筑，布局遵循“前堂后寝”规制，设大堂、二堂、花厅等区域，大堂为审案理政之所，威严肃穆，体现地方治理的等级秩序。
+                        </p>
+                        <div class="flex items-center text-amber">
+                            <i class="fa fa-map-marker mr-2"></i>
+                            <span class="text-pine">主要分布：各府州治所</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 县衙 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <img src="image/guanfu/xianya.jpg" alt="县衙" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-pine mb-3">县衙</h3>
+                        <p class="text-bamboo mb-4">
+                            县级行政机构建筑，规模较州府简约但规制完整，设仪门、大堂、宅门、内衙，兼顾行政、司法、居住功能，是基层治理的物理载体。
+                        </p>
+                        <div class="flex items-center text-amber">
+                            <i class="fa fa-map-marker mr-2"></i>
+                            <span class="text-pine">主要分布：全国各县治所</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 六部官署 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <img src="image/guanfu/liubu.jpg" alt="六部官署" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-pine mb-3">京城六部官署</h3>
+                        <p class="text-bamboo mb-4">
+                            中央行政机构建筑，位于京城核心区域，建筑布局对称规整，按职能分署办公，体现中央集权的行政体系，用材考究、规制森严。
+                        </p>
+                        <div class="flex items-center text-amber">
+                            <i class="fa fa-map-marker mr-2"></i>
+                            <span class="text-pine">主要分布：北京、南京等古都</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 按察使司 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <img src="image/guanfu/ancha.jpg" alt="按察使司" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-pine mb-3">按察使司</h3>
+                        <p class="text-bamboo mb-4">
+                            省级司法监察机构建筑，专司刑狱监察，建筑布局突出威慑性，设公堂、牢狱、档案库等，是古代司法体系的重要物化体现。
+                        </p>
+                        <div class="flex items-center text-amber">
+                            <i class="fa fa-map-marker mr-2"></i>
+                            <span class="text-pine">主要分布：各省省会</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 总督衙门 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <img src="image/guanfu/zongdu.jpg" alt="总督衙门" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-pine mb-3">总督衙门</h3>
+                        <p class="text-bamboo mb-4">
+                            跨省军政长官办公建筑，规模宏大，兼具行政与军事指挥功能，建筑布局融合官署与军营特色，体现督抚节制数省的权力地位。
+                        </p>
+                        <div class="flex items-center text-amber">
+                            <i class="fa fa-map-marker mr-2"></i>
+                            <span class="text-pine">主要分布：两江、直隶等总督辖区</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 驿站官署 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <img src="image/guanfu/yizhan.jpg" alt="驿站官署" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-pine mb-3">驿站官署</h3>
+                        <p class="text-bamboo mb-4">
+                            古代交通与通信行政建筑，兼具办公、接待、驿传功能，建筑布局灵活，设驿丞署、驿舍、马厩等，是古代官办交通体系的节点。
+                        </p>
+                        <div class="flex items-center text-amber">
+                            <i class="fa fa-map-marker mr-2"></i>
+                            <span class="text-pine">主要分布：全国驿道沿线</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 建筑特色 -->
+    <section id="features" class="py-16 px-4 bg-pine/5">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-pine">
+                <i class="fa fa-paint-brush text-amber mr-2"></i>
+                古代官府建筑特色
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/3 mb-4 md:mb-0">
+                        <i class="fa fa-compass text-6xl text-amber"></i>
+                    </div>
+                    <div class="md:w-2/3">
+                        <h3 class="text-2xl font-bold text-pine mb-3">等级森严</h3>
+                        <p class="text-bamboo">
+                            建筑规模、形制、装饰严格遵循封建等级制度，屋顶形式（歇山顶/硬山顶）、开间数量、彩绘纹饰均与官阶对应，彰显权力层级。
+                        </p>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/3 mb-4 md:mb-0">
+                        <i class="fa fa-sitemap text-6xl text-amber"></i>
+                    </div>
+                    <div class="md:w-2/3">
+                        <h3 class="text-2xl font-bold text-pine mb-3">规制严谨</h3>
+                        <p class="text-bamboo">
+                            遵循“前朝后寝、中轴对称”布局，前为办公理政的公域，后为官员居住的私域，功能分区明确，体现“官民分野、公私分明”的理念。
+                        </p>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/3 mb-4 md:mb-0">
+                        <i class="fa fa-leaf text-6xl text-amber"></i>
+                    </div>
+                    <div class="md:w-2/3">
+                        <h3 class="text-2xl font-bold text-pine mb-3">功能适配</h3>
+                        <p class="text-bamboo">
+                            结合行政、司法、居住、仓储等功能，大堂设公案、戒石铭，后院置花厅、库房，牢狱附于侧，满足地方治理的全流程需求。
+                        </p>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/3 mb-4 md:mb-0">
+                        <i class="fa fa-picture-o text-6xl text-amber"></i>
+                    </div>
+                    <div class="md:w-2/3">
+                        <h3 class="text-2xl font-bold text-pine mb-3">威仪彰显</h3>
+                        <p class="text-bamboo">
+                            设照壁、仪门、戒石坊等标志性建筑，庭院开阔、廊柱挺拔，色彩以青灰为主辅以朱红，营造庄重肃穆的行政氛围。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 文化内涵 -->
+    <section id="culture" class="py-16 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-pine">
+                <i class="fa fa-book text-amber mr-2"></i>
+                古代官府的文化内涵
+            </h2>
+            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-8">
+                <p class="text-bamboo text-lg mb-6">
+                    中国古代官府建筑是封建行政体系的物化体现，承载着传统政治文化与治理理念：
+                </p>
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <i class="fa fa-check-circle text-amber mt-1 mr-3 text-xl"></i>
+                        <p class="text-bamboo">
+                            <span class="font-bold text-pine">权力象征：</span>建筑规制与装饰直接映射官员品级与行政权力，是封建等级制度的可视化表达。
+                        </p>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-check-circle text-amber mt-1 mr-3 text-xl"></i>
+                        <p class="text-bamboo">
+                            <span class="font-bold text-pine">治理理念：</span>“前堂后寝”布局体现“勤政为民”的治理观，戒石铭、公生明牌坊彰显廉政与公正追求。
+                        </p>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-check-circle text-amber mt-1 mr-3 text-xl"></i>
+                        <p class="text-bamboo">
+                            <span class="font-bold text-pine">地域治理：</span>地方官府建筑融合地域建筑特色，同时保持中央规制，是中央集权与地方自治的平衡体现。
+                        </p>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-check-circle text-amber mt-1 mr-3 text-xl"></i>
+                        <p class="text-bamboo">
+                            <span class="font-bold text-pine">礼制秩序：</span>从仪门到内衙的空间序列，规范了官民、上下级的交往礼仪，维系封建行政秩序。
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-pine text-white py-8 px-4">
+        <div class="container mx-auto text-center">
+            <p class="mb-4">© 2025 古韵栖居 - 中国古代官府建筑文化传承</p>
+            <p class="text-bamboo text-sm">
+                威严肃穆承规制，政通人和显威仪 · 传承中华建筑之美
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('py-2');
+                nav.classList.remove('py-3');
+            } else {
+                nav.classList.add('py-3');
+                nav.classList.remove('py-2');
+            }
+        });
+    </script>
+</body>
+</html>

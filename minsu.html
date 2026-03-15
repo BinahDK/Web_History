@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中国古代民宿建筑 - 古韵栖居</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- 配置Tailwind自定义主题 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // 中国传统色彩
+                        cinnabar: '#E53E3E', // 朱砂红
+                        pine: '#2D3748', // 松墨色
+                        bamboo: '#718096', // 竹青色
+                        rice: '#FAF6ED', // 米白色
+                        amber: '#D69E2E', // 琥珀黄
+                    },
+                    fontFamily: {
+                        chinese: ['"Ma Shan Zheng"', 'serif'], // 国风字体
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- 自定义样式 -->
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
+            .bg-texture {
+                background-image: url('image/minsu.jpg');
+                background-size: cover;
+                background-position: center;
+                background-blend-mode: overlay;
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+            }
+        }
+    </style>
+    <!-- 引入国风字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+</head>
+<body class="bg-rice font-chinese">
+    <!-- 导航栏 -->
+    <nav class="sticky top-0 z-50 bg-pine/95 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="p1.php" class="text-2xl md:text-3xl font-bold flex items-center">
+                <i class="fa fa-home mr-2 text-amber"></i>
+                <span>古韵栖居</span>
+            </a>
+            <!-- 导航菜单 -->
+            <div class="hidden md:flex space-x-8">
+                <!-- 核心修改：首页链接改为p1.html -->
+                <a href="p1.php" class="nav-link hover:text-amber transition-colors py-2 border-b-2 border-amber">首页</a>
+                <a href="#types" class="nav-link hover:text-amber transition-colors py-2 border-b-2 border-transparent hover:border-amber">民宿类型</a>
+                <a href="#features" class="nav-link hover:text-amber transition-colors py-2 border-b-2 border-transparent hover:border-amber">建筑特色</a>
+                <a href="#culture" class="nav-link hover:text-amber transition-colors py-2 border-b-2 border-transparent hover:border-amber">文化内涵</a>
+            </div>
+            <!-- 移动端菜单按钮 -->
+            <button id="menuBtn" class="md:hidden text-white focus:outline-none">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+        <!-- 移动端下拉菜单 -->
+        <div id="mobileMenu" class="md:hidden hidden bg-pine/98 text-white">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <!-- 核心修改：移动端首页链接改为p1.html -->
+                <a href="p1.php" class="py-2 hover:text-amber transition-colors">首页</a>
+                <a href="#types" class="py-2 hover:text-amber transition-colors">民宿类型</a>
+                <a href="#features" class="py-2 hover:text-amber transition-colors">建筑特色</a>
+                <a href="#culture" class="py-2 hover:text-amber transition-colors">文化内涵</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 首页横幅（保留原id但跳转逻辑已改） -->
+    <section id="home" class="relative h-[70vh] md:h-[80vh] bg-texture bg-pine/70 flex items-center justify-center">
+        <div class="absolute inset-0 bg-pine/50"></div>
+        <div class="relative text-center px-4 text-white">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 text-shadow">中国古代民宿建筑</h1>
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto text-shadow">一砖一瓦皆故事，一窗一户有乾坤</p>
+            <a href="#types" class="mt-8 inline-block bg-amber/90 hover:bg-amber text-pine font-bold py-3 px-8 rounded-lg transition-all">
+                探索民宿类型
+            </a>
+        </div>
+    </section>
+
+    <!-- 民宿类型介绍 -->
+    <section id="types" class="py-16 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-pine">
+                <i class="fa fa-building-o text-amber mr-2"></i>
+                中国古代经典民宿类型
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 四合院 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <img src="image/minsu/siheyuan.jpg" alt="北京四合院" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-pine mb-3">北京四合院</h3>
+                        <p class="text-bamboo mb-4">
+                            四合院是北方民居的典型代表，以四面房屋围合成院落为核心，讲究中轴对称、尊卑有序。
+                            作为民宿，四合院保留了传统的垂花门、抄手游廊，院内植槐栽竹，尽显老北京的悠然韵味。
+                        </p>
+                        <div class="flex items-center text-amber">
+                            <i class="fa fa-map-marker mr-2"></i>
+                            <span class="text-pine">主要分布：北京、华北地区</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 吊脚楼 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <img src="image/minsu/diaojiaolou.jpg" alt="湘西吊脚楼" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-pine mb-3">湘西吊脚楼</h3>
+                        <p class="text-bamboo mb-4">
+                            西南少数民族的特色民居，多依山傍水而建，下部架空成廊，既通风防潮，又能避蛇虫。
+                            吊脚楼民宿保留了木质结构与雕花栏杆，推窗可见青山绿水，体验浓郁的苗寨风情。
+                        </p>
+                        <div class="flex items-center text-amber">
+                            <i class="fa fa-map-marker mr-2"></i>
+                            <span class="text-pine">主要分布：湘西、贵州、重庆</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 窑洞 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <img src="image/minsu/yaodong.jpg" alt="陕北窑洞" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-pine mb-3">陕北窑洞</h3>
+                        <p class="text-bamboo mb-4">
+                            黄土高原的特色民居，利用黄土层的直立性挖掘而成，冬暖夏凉。
+                            现代窑洞民宿保留了传统的土炕、石桌，结合现代设施，体验黄土高原的质朴生活。
+                        </p>
+                        <div class="flex items-center text-amber">
+                            <i class="fa fa-map-marker mr-2"></i>
+                            <span class="text-pine">主要分布：陕北、晋西、豫西</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 徽派民居 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <img src="image/minsu/huipai.jpg" alt="徽派民居" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-pine mb-3">皖南徽派民居</h3>
+                        <p class="text-bamboo mb-4">
+                            以白墙黛瓦、马头墙为特色，建筑布局精巧，雕梁画栋。
+                            徽派民宿多由古宅改造而成，保留了天井、厢房、雕花窗，置身其中如入水墨画卷。
+                        </p>
+                        <div class="flex items-center text-amber">
+                            <i class="fa fa-map-marker mr-2"></i>
+                            <span class="text-pine">主要分布：安徽黄山、江西婺源</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 客家围龙屋 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <img src="image/minsu/kejiaweilongwu.jpg" alt="客家围龙屋" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-pine mb-3">客家围龙屋</h3>
+                        <p class="text-bamboo mb-4">
+                            客家民居的代表，以环形或半圆形布局为特色，聚族而居，防御性强。
+                            围龙屋民宿保留了祠堂、禾坪、水井等元素，体验客家文化的厚重与温暖。
+                        </p>
+                        <div class="flex items-center text-amber">
+                            <i class="fa fa-map-marker mr-2"></i>
+                            <span class="text-pine">主要分布：广东梅州、福建龙岩</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 江南水乡民居 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <img src="image/minsu/jiangnanshuixiang.jpg" alt="江南水乡民居" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-pine mb-3">江南水乡民居</h3>
+                        <p class="text-bamboo mb-4">
+                            依水而建，前街后河，粉墙黛瓦，穿竹石栏。
+                            水乡民宿多为临水而建的阁楼，推窗见水，出门登舟，体验“小桥流水人家”的诗意生活。
+                        </p>
+                        <div class="flex items-center text-amber">
+                            <i class="fa fa-map-marker mr-2"></i>
+                            <span class="text-pine">主要分布：苏州、周庄、乌镇</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 建筑特色 -->
+    <section id="features" class="py-16 px-4 bg-pine/5">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-pine">
+                <i class="fa fa-paint-brush text-amber mr-2"></i>
+                古代民宿建筑特色
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/3 mb-4 md:mb-0">
+                        <i class="fa fa-compass text-6xl text-amber"></i>
+                    </div>
+                    <div class="md:w-2/3">
+                        <h3 class="text-2xl font-bold text-pine mb-3">因地制宜</h3>
+                        <p class="text-bamboo">
+                            古代民宿建筑充分结合地域环境特点：北方四合院注重防寒保暖，南方吊脚楼强调通风防潮，黄土高原窑洞利用地形优势，江南水乡民居依水而建，体现了“天人合一”的建筑理念。
+                        </p>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/3 mb-4 md:mb-0">
+                        <i class="fa fa-sitemap text-6xl text-amber"></i>
+                    </div>
+                    <div class="md:w-2/3">
+                        <h3 class="text-2xl font-bold text-pine mb-3">礼制有序</h3>
+                        <p class="text-bamboo">
+                            建筑布局遵循传统礼制，讲究中轴对称、尊卑有序。四合院的正房、厢房布局，围龙屋的祠堂居中，都体现了中国传统的家族伦理与社会秩序。
+                        </p>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/3 mb-4 md:mb-0">
+                        <i class="fa fa-leaf text-6xl text-amber"></i>
+                    </div>
+                    <div class="md:w-2/3">
+                        <h3 class="text-2xl font-bold text-pine mb-3">生态智慧</h3>
+                        <p class="text-bamboo">
+                            采用天然材料（木材、石材、黄土），利用自然通风、采光、保温原理，窑洞的冬暖夏凉、吊脚楼的通风防潮，都是古人生态智慧的体现。
+                        </p>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/3 mb-4 md:mb-0">
+                        <i class="fa fa-picture-o text-6xl text-amber"></i>
+                    </div>
+                    <div class="md:w-2/3">
+                        <h3 class="text-2xl font-bold text-pine mb-3">工艺精美</h3>
+                        <p class="text-bamboo">
+                            木雕、砖雕、石雕工艺精湛，徽派民居的三雕艺术、四合院的垂花门、吊脚楼的雕花栏杆，都展现了中国传统建筑的美学价值。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 文化内涵 -->
+    <section id="culture" class="py-16 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-pine">
+                <i class="fa fa-book text-amber mr-2"></i>
+                古代民宿的文化内涵
+            </h2>
+            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-8">
+                <p class="text-bamboo text-lg mb-6">
+                    中国古代民宿不仅是居住空间，更是传统文化的载体，承载着中国人的生活哲学与审美情趣：
+                </p>
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <i class="fa fa-check-circle text-amber mt-1 mr-3 text-xl"></i>
+                        <p class="text-bamboo">
+                            <span class="font-bold text-pine">天人合一：</span>建筑与自然环境高度融合，顺应天时地利，体现了中国人对自然的敬畏与和谐共处的理念。
+                        </p>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-check-circle text-amber mt-1 mr-3 text-xl"></i>
+                        <p class="text-bamboo">
+                            <span class="font-bold text-pine">家族伦理：</span>建筑布局体现了长幼有序、尊卑有别的家族伦理，四合院的正房、厢房划分，围龙屋的聚族而居，都是家族文化的体现。
+                        </p>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-check-circle text-amber mt-1 mr-3 text-xl"></i>
+                        <p class="text-bamboo">
+                            <span class="font-bold text-pine">诗意栖居：</span>注重居住的审美体验，庭院植花木，窗棂有景致，体现了中国人“诗意栖居”的生活追求。
+                        </p>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-check-circle text-amber mt-1 mr-3 text-xl"></i>
+                        <p class="text-bamboo">
+                            <span class="font-bold text-pine">地域文化：</span>不同地域的民宿建筑风格各异，反映了各地的气候、物产、民俗文化，是地域文化的鲜活载体。
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-pine text-white py-8 px-4">
+        <div class="container mx-auto text-center">
+            <p class="mb-4">© 2025 古韵栖居 - 中国古代民宿建筑文化传承</p>
+            <p class="text-bamboo text-sm">
+                一砖一瓦皆故事，一窗一户有乾坤 · 传承中华建筑之美
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 移动端菜单切换
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 平滑滚动（仅保留非首页链接的平滑滚动）
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // 关闭移动端菜单
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // 导航栏滚动效果
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('py-2');
+                nav.classList.remove('py-3');
+            } else {
+                nav.classList.add('py-3');
+                nav.classList.remove('py-2');
+            }
+        });
+    </script>
+</body>
+</html>

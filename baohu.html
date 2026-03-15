@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中国古代建筑保护现状 - 古韵栖居</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cinnabar: '#E53E3E', 
+                        pine: '#2D3748', 
+                        bamboo: '#718096', 
+                        rice: '#FAF6ED', 
+                        amber: '#D69E2E', 
+                    },
+                    fontFamily: {
+                        chinese: ['"Ma Shan Zheng"', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
+            .bg-texture {
+                background-image: url('image/baohu.jpg');
+                background-size: cover;
+                background-position: center;
+                background-blend-mode: overlay;
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+</head>
+<body class="bg-rice font-chinese">
+    <!-- 导航栏 -->
+    <nav class="sticky top-0 z-50 bg-pine/95 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="p1.php" class="text-2xl md:text-3xl font-bold flex items-center">
+                <i class="fa fa-home mr-2 text-amber"></i>
+                <span>古韵栖居</span>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="p1.php" class="nav-link hover:text-amber transition-colors py-2 border-b-2 border-amber">首页</a>
+                <a href="#status" class="nav-link hover:text-amber transition-colors py-2 border-b-2 border-transparent hover:border-amber">保护现状</a>
+                <a href="#measures" class="nav-link hover:text-amber transition-colors py-2 border-b-2 border-transparent hover:border-amber">保护措施</a>
+                <a href="#challenges" class="nav-link hover:text-amber transition-colors py-2 border-b-2 border-transparent hover:border-amber">现存挑战</a>
+            </div>
+            <button id="menuBtn" class="md:hidden text-white focus:outline-none">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+        <div id="mobileMenu" class="md:hidden hidden bg-pine/98 text-white">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="p1.php" class="py-2 hover:text-amber transition-colors">首页</a>
+                <a href="#status" class="py-2 hover:text-amber transition-colors">保护现状</a>
+                <a href="#measures" class="py-2 hover:text-amber transition-colors">保护措施</a>
+                <a href="#challenges" class="py-2 hover:text-amber transition-colors">现存挑战</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 首页横幅 -->
+    <section id="home" class="relative h-[70vh] md:h-[80vh] bg-texture bg-pine/70 flex items-center justify-center">
+        <div class="absolute inset-0 bg-pine/50"></div>
+        <div class="relative text-center px-4 text-white">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 text-shadow">中国古代建筑保护现状</h1>
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto text-shadow">守护千年遗存，传承古建文脉</p>
+            <a href="#status" class="mt-8 inline-block bg-amber/90 hover:bg-amber text-pine font-bold py-3 px-8 rounded-lg transition-all">
+                了解保护进展
+            </a>
+        </div>
+    </section>
+
+    <!-- 保护现状 -->
+    <section id="status" class="py-16 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-pine">
+                <i class="fa fa-shield text-amber mr-2"></i>
+                整体保护现状
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-8 card-hover">
+                    <h3 class="text-2xl font-bold text-pine mb-4 text-green-600">
+                        <i class="fa fa-check mr-2"></i>已取得的成果
+                    </h3>
+                    <ul class="space-y-3 text-bamboo">
+                        <li>✅ 全国重点文物保护单位超5000处，其中古建筑占比超60%；</li>
+                        <li>✅ 故宫、平遥古城等列入世界文化遗产，获得国际层面保护；</li>
+                        <li>✅ 数字化技术应用，完成大批古建筑三维扫描与数据存档；</li>
+                        <li>✅ 传统营造技艺列入非遗，培养专业修复工匠队伍。</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-8 card-hover">
+                    <h3 class="text-2xl font-bold text-pine mb-4 text-red-600">
+                        <i class="fa fa-exclamation-triangle mr-2"></i>仍存在的问题
+                    </h3>
+                    <ul class="space-y-3 text-bamboo">
+                        <li>⚠️ 部分偏远地区古建筑因资金不足，年久失修；</li>
+                        <li>⚠️ 旅游开发过度，导致部分古建筑承载压力过大；</li>
+                        <li>⚠️ 自然损毁（风雨、地震、虫害）持续威胁古建筑安全；</li>
+                        <li>⚠️ 现代建设与古建筑保护的矛盾仍未完全解决。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 保护措施 -->
+    <section id="measures" class="py-16 px-4 bg-pine/5">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-pine">
+                <i class="fa fa-cogs text-amber mr-2"></i>
+                核心保护措施
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center card-hover">
+                    <i class="fa fa-database text-5xl text-amber mb-4"></i>
+                    <h3 class="text-xl font-bold text-pine mb-2">数字化保护</h3>
+                    <p class="text-bamboo">
+                        三维扫描、VR/AR复原、数字档案建立，永久保存古建筑信息，为修复提供精准数据。
+                    </p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center card-hover">
+                    <i class="fa fa-hammer text-5xl text-amber mb-4"></i>
+                    <h3 class="text-xl font-bold text-pine mb-2">传统工艺修复</h3>
+                    <p class="text-bamboo">
+                        遵循“不改变文物原状”原则，采用传统材料与工艺，保留古建筑的原真性与历史信息。
+                    </p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center card-hover">
+                    <i class="fa fa-users text-5xl text-amber mb-4"></i>
+                    <h3 class="text-xl font-bold text-pine mb-2">公众参与</h3>
+                    <p class="text-bamboo">
+                        开展古建筑保护科普、志愿者行动，提升公众保护意识，形成全民守护的社会氛围。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 现存挑战 -->
+    <section id="challenges" class="py-16 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-pine">
+                <i class="fa fa-question-circle text-amber mr-2"></i>
+                保护工作现存挑战
+            </h2>
+            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-8">
+                <ul class="space-y-5">
+                    <li class="flex items-start">
+                        <i class="fa fa-angle-right text-amber mt-1 mr-4 text-2xl"></i>
+                        <p class="text-bamboo text-lg">
+                            <span class="font-bold text-pine">资金投入不足：</span>古建筑修复成本高、周期长，地方财政压力大，部分中小规模古建筑缺乏保护资金。
+                        </p>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-angle-right text-amber mt-1 mr-4 text-2xl"></i>
+                        <p class="text-bamboo text-lg">
+                            <span class="font-bold text-pine">专业人才短缺：</span>传统营造技艺传承人老龄化，年轻一代从业者少，修复技艺面临断代风险。
+                        </p>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-angle-right text-amber mt-1 mr-4 text-2xl"></i>
+                        <p class="text-bamboo text-lg">
+                            <span class="font-bold text-pine">保护与发展平衡：</span>部分地区为追求经济收益，过度开发古建筑，破坏其历史风貌与原真性。
+                        </p>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-angle-right text-amber mt-1 mr-4 text-2xl"></i>
+                        <p class="text-bamboo text-lg">
+                            <span class="font-bold text-pine">自然灾害威胁：</span>极端天气、地震、地质灾害等自然因素，对古建筑的损毁具有不可预测性。
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-pine text-white py-8 px-4">
+        <div class="container mx-auto text-center">
+            <p class="mb-4">© 2025 古韵栖居 - 中国古代建筑保护研究</p>
+            <p class="text-bamboo text-sm">
+                守护千年遗存，传承古建文脉 · 传承中华建筑之美
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('py-2');
+                nav.classList.remove('py-3');
+            } else {
+                nav.classList.add('py-3');
+                nav.classList.remove('py-2');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中国古代皇宫建筑 - 古韵栖居</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cinnabar: '#E53E3E', 
+                        pine: '#2D3748', 
+                        bamboo: '#718096', 
+                        rice: '#FAF6ED', 
+                        amber: '#D69E2E', 
+                    },
+                    fontFamily: {
+                        chinese: ['"Ma Shan Zheng"', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
+            .bg-texture {
+                background-image: url('image/huanggong.jpg');
+                background-size: cover;
+                background-position: center;
+                background-blend-mode: overlay;
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+</head>
+<body class="bg-rice font-chinese">
+    <!-- 导航栏 -->
+    <nav class="sticky top-0 z-50 bg-pine/95 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="p1.php" class="text-2xl md:text-3xl font-bold flex items-center">
+                <i class="fa fa-home mr-2 text-amber"></i>
+                <span>古韵栖居</span>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="p1.php" class="nav-link hover:text-amber transition-colors py-2 border-b-2 border-amber">首页</a>
+                <a href="#types" class="nav-link hover:text-amber transition-colors py-2 border-b-2 border-transparent hover:border-amber">皇宫类型</a>
+                <a href="#features" class="nav-link hover:text-amber transition-colors py-2 border-b-2 border-transparent hover:border-amber">建筑特色</a>
+                <a href="#culture" class="nav-link hover:text-amber transition-colors py-2 border-b-2 border-transparent hover:border-amber">文化内涵</a>
+            </div>
+            <button id="menuBtn" class="md:hidden text-white focus:outline-none">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+        <div id="mobileMenu" class="md:hidden hidden bg-pine/98 text-white">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="p1.php" class="py-2 hover:text-amber transition-colors">首页</a>
+                <a href="#types" class="py-2 hover:text-amber transition-colors">皇宫类型</a>
+                <a href="#features" class="py-2 hover:text-amber transition-colors">建筑特色</a>
+                <a href="#culture" class="py-2 hover:text-amber transition-colors">文化内涵</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 首页横幅 -->
+    <section id="home" class="relative h-[70vh] md:h-[80vh] bg-texture bg-pine/70 flex items-center justify-center">
+        <div class="absolute inset-0 bg-pine/50"></div>
+        <div class="relative text-center px-4 text-white">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 text-shadow">中国古代皇宫建筑</h1>
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto text-shadow">紫禁之巅揽乾坤，皇家气象冠九州</p>
+            <a href="#types" class="mt-8 inline-block bg-amber/90 hover:bg-amber text-pine font-bold py-3 px-8 rounded-lg transition-all">
+                探索皇宫类型
+            </a>
+        </div>
+    </section>
+
+    <!-- 皇宫类型介绍 -->
+    <section id="types" class="py-16 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-pine">
+                <i class="fa fa-castle text-amber mr-2"></i>
+                中国古代经典皇宫类型
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 明清紫禁城 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <img src="image/huanggong/mingqing.jpg" alt="明清紫禁城" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-pine mb-3">明清紫禁城</h3>
+                        <p class="text-bamboo mb-4">
+                            中国皇宫建筑的巅峰之作，以中轴对称、前朝后寝为核心布局，太和殿、乾清宫等建筑气势恢宏，黄琉璃瓦、红墙朱柱彰显皇权至高无上。
+                        </p>
+                        <div class="flex items-center text-amber">
+                            <i class="fa fa-map-marker mr-2"></i>
+                            <span class="text-pine">所在地：北京</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 唐大明宫 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <img src="image/huanggong/tang.jpg" alt="唐大明宫" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-pine mb-3">唐代大明宫</h3>
+                        <p class="text-bamboo mb-4">
+                            盛唐皇宫代表，规模宏大，含元殿、麟德殿等建筑雄浑开阔，采用抬梁式木构架，体现“万国来朝”的盛唐气象，是古代宫殿的典范。
+                        </p>
+                        <div class="flex items-center text-amber">
+                            <i class="fa fa-map-marker mr-2"></i>
+                            <span class="text-pine">所在地：西安</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 宋东京皇宫 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <img src="image/huanggong/songdongjing.jpg" alt="宋东京皇宫" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-pine mb-3">宋代东京皇宫</h3>
+                        <p class="text-bamboo mb-4">
+                            北宋都城汴梁的皇宫，建筑风格趋于精致，取消了唐代的高阁布局，增加园林景观，大庆殿、垂拱殿兼具礼制与实用功能。
+                        </p>
+                        <div class="flex items-center text-amber">
+                            <i class="fa fa-map-marker mr-2"></i>
+                            <span class="text-pine">所在地：开封</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 元大都皇宫 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <img src="image/huanggong/yuandadu.jpg" alt="元大都皇宫" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-pine mb-3">元代大都皇宫</h3>
+                        <p class="text-bamboo mb-4">
+                            蒙古族统治下的皇宫建筑，融合草原文化与中原规制，宫城布局简约大气，殿宇多用白墙蓝瓦，体现游牧民族的审美特色。
+                        </p>
+                        <div class="flex items-center text-amber">
+                            <i class="fa fa-map-marker mr-2"></i>
+                            <span class="text-pine">所在地：北京</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 南京明故宫 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <img src="image/huanggong/nanjing.jpg" alt="南京明故宫" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-pine mb-3">南京明故宫</h3>
+                        <p class="text-bamboo mb-4">
+                            明代初期皇宫，是北京紫禁城的蓝本，布局遵循“左祖右社、前朝后寝”，奉天殿规模远超太和殿，后因战乱损毁，仅存遗址。
+                        </p>
+                        <div class="flex items-center text-amber">
+                            <i class="fa fa-map-marker mr-2"></i>
+                            <span class="text-pine">所在地：南京</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 洛阳紫微城 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <img src="image/huanggong/luoyang.jpg" alt="洛阳紫微城" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-pine mb-3">隋唐洛阳紫微城</h3>
+                        <p class="text-bamboo mb-4">
+                            隋唐东都皇宫，因山就势布局，明堂、天堂等建筑高耸巍峨，融合南北建筑特色，是古代宫廷建筑与自然结合的典范。
+                        </p>
+                        <div class="flex items-center text-amber">
+                            <i class="fa fa-map-marker mr-2"></i>
+                            <span class="text-pine">所在地：洛阳</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 建筑特色 -->
+    <section id="features" class="py-16 px-4 bg-pine/5">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-pine">
+                <i class="fa fa-paint-brush text-amber mr-2"></i>
+                古代皇宫建筑特色
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/3 mb-4 md:mb-0">
+                        <i class="fa fa-compass text-6xl text-amber"></i>
+                    </div>
+                    <div class="md:w-2/3">
+                        <h3 class="text-2xl font-bold text-pine mb-3">中轴对称</h3>
+                        <p class="text-bamboo">
+                            以中轴线为核心，重要建筑均布于轴线上，两侧建筑对称分布，体现“居中为尊”的皇权思想，是皇宫建筑的核心布局原则。
+                        </p>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/3 mb-4 md:mb-0">
+                        <i class="fa fa-sitemap text-6xl text-amber"></i>
+                    </div>
+                    <div class="md:w-2/3">
+                        <h3 class="text-2xl font-bold text-pine mb-3">前朝后寝</h3>
+                        <p class="text-bamboo">
+                            前区为朝政处理的外朝（太和殿/含元殿），后区为帝后生活的内廷（乾清宫/后宫），公私分区明确，体现“家国一体”的统治理念。
+                        </p>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/3 mb-4 md:mb-0">
+                        <i class="fa fa-leaf text-6xl text-amber"></i>
+                    </div>
+                    <div class="md:w-2/3">
+                        <h3 class="text-2xl font-bold text-pine mb-3">等级极致</h3>
+                        <p class="text-bamboo">
+                            黄琉璃瓦、重檐庑殿顶、金龙和玺彩绘等仅为皇宫专用，台基高度、开间数量均为最高等级，彰显皇权的绝对独尊。
+                        </p>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/3 mb-4 md:mb-0">
+                        <i class="fa fa-picture-o text-6xl text-amber"></i>
+                    </div>
+                    <div class="md:w-2/3">
+                        <h3 class="text-2xl font-bold text-pine mb-3">天人合一</h3>
+                        <p class="text-bamboo">
+                            建筑布局对应星象（紫微星垣），名称寓意吉祥（乾清、坤宁），园林景观融入自然，体现皇权与天道合一的统治合法性。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 文化内涵 -->
+    <section id="culture" class="py-16 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-pine">
+                <i class="fa fa-book text-amber mr-2"></i>
+                古代皇宫的文化内涵
+            </h2>
+            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-8">
+                <p class="text-bamboo text-lg mb-6">
+                    中国古代皇宫建筑是封建王朝的权力核心，承载着最高等级的文化与礼制内涵：
+                </p>
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <i class="fa fa-check-circle text-amber mt-1 mr-3 text-xl"></i>
+                        <p class="text-bamboo">
+                            <span class="font-bold text-pine">皇权象征：</span>建筑的规模、形制、装饰均为最高等级，是“君权神授”理念的物化体现，彰显皇帝的绝对权威。
+                        </p>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-check-circle text-amber mt-1 mr-3 text-xl"></i>
+                        <p class="text-bamboo">
+                            <span class="font-bold text-pine">礼制核心：</span>皇宫是国家礼制的核心载体，大典、朝会、祭祀等重要礼制活动均在此举行，维系封建统治秩序。
+                        </p>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-check-circle text-amber mt-1 mr-3 text-xl"></i>
+                        <p class="text-bamboo">
+                            <span class="font-bold text-pine">文化集大成：</span>汇聚全国顶尖的工匠、材料与技艺，融合建筑、雕塑、绘画、园林等艺术形式，是古代文化的巅峰之作。
+                        </p>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-check-circle text-amber mt-1 mr-3 text-xl"></i>
+                        <p class="text-bamboo">
+                            <span class="font-bold text-pine">治国理念：</span>“前朝后寝”“左祖右社”的布局，体现“以礼治国”“家国同构”的传统治国理念。
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-pine text-white py-8 px-4">
+        <div class="container mx-auto text-center">
+            <p class="mb-4">© 2025 古韵栖居 - 中国古代皇宫建筑文化传承</p>
+            <p class="text-bamboo text-sm">
+                紫禁之巅揽乾坤，皇家气象冠九州 · 传承中华建筑之美
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('py-2');
+                nav.classList.remove('py-3');
+            } else {
+                nav.classList.add('py-3');
+                nav.classList.remove('py-2');
+            }
+        });
+    </script>
+</body>
+</html>

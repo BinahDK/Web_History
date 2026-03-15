@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中国古代建筑学术研究 - 古韵栖居</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cinnabar: '#E53E3E', 
+                        pine: '#2D3748', 
+                        bamboo: '#718096', 
+                        rice: '#FAF6ED', 
+                        amber: '#D69E2E', 
+                    },
+                    fontFamily: {
+                        chinese: ['"Ma Shan Zheng"', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
+            .bg-texture {
+                background-image: url('image/yanjiu.jpg');
+                background-size: cover;
+                background-position: center;
+                background-blend-mode: overlay;
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+</head>
+<body class="bg-rice font-chinese">
+    <!-- 导航栏 -->
+    <nav class="sticky top-0 z-50 bg-pine/95 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="p1.php" class="text-2xl md:text-3xl font-bold flex items-center">
+                <i class="fa fa-home mr-2 text-amber"></i>
+                <span>古韵栖居</span>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="p1.php" class="nav-link hover:text-amber transition-colors py-2 border-b-2 border-amber">首页</a>
+                <a href="#fields" class="nav-link hover:text-amber transition-colors py-2 border-b-2 border-transparent hover:border-amber">研究领域</a>
+                <a href="#achievements" class="nav-link hover:text-amber transition-colors py-2 border-b-2 border-transparent hover:border-amber">研究成果</a>
+                <a href="#trends" class="nav-link hover:text-amber transition-colors py-2 border-b-2 border-transparent hover:border-amber">研究趋势</a>
+            </div>
+            <button id="menuBtn" class="md:hidden text-white focus:outline-none">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+        <div id="mobileMenu" class="md:hidden hidden bg-pine/98 text-white">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="p1.php" class="py-2 hover:text-amber transition-colors">首页</a>
+                <a href="#fields" class="py-2 hover:text-amber transition-colors">研究领域</a>
+                <a href="#achievements" class="py-2 hover:text-amber transition-colors">研究成果</a>
+                <a href="#trends" class="py-2 hover:text-amber transition-colors">研究趋势</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 首页横幅 -->
+    <section id="home" class="relative h-[70vh] md:h-[80vh] bg-texture bg-pine/70 flex items-center justify-center">
+        <div class="absolute inset-0 bg-pine/50"></div>
+        <div class="relative text-center px-4 text-white">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 text-shadow">中国古代建筑学术研究</h1>
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto text-shadow">探源古建之理，求索营造之道</p>
+            <a href="#fields" class="mt-8 inline-block bg-amber/90 hover:bg-amber text-pine font-bold py-3 px-8 rounded-lg transition-all">
+                探索研究脉络
+            </a>
+        </div>
+    </section>
+
+    <!-- 研究领域 -->
+    <section id="fields" class="py-16 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-pine">
+                <i class="fa fa-flask text-amber mr-2"></i>
+                核心研究领域
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-xl shadow-lg p-6 card-hover">
+                    <i class="fa fa-sitemap text-4xl text-amber mb-4"></i>
+                    <h3 class="text-2xl font-bold text-pine mb-3">形制研究</h3>
+                    <p class="text-bamboo">
+                        梳理不同朝代、不同地域建筑的形制演变，分析布局、结构、装饰的特征与规律。
+                    </p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 card-hover">
+                    <i class="fa fa-book text-4xl text-amber mb-4"></i>
+                    <h3 class="text-2xl font-bold text-pine mb-3">文献考据</h3>
+                    <p class="text-bamboo">
+                        校注古代建筑典籍，考证史料记载的真实性，还原古代建筑的营造背景与工艺。
+                    </p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 card-hover">
+                    <i class="fa fa-calculator text-4xl text-amber mb-4"></i>
+                    <h3 class="text-2xl font-bold text-pine mb-3">结构力学</h3>
+                    <p class="text-bamboo">
+                        分析古建筑的结构稳定性、抗震性能，量化研究榫卯、斗拱的力学原理。
+                    </p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 card-hover">
+                    <i class="fa fa-globe text-4xl text-amber mb-4"></i>
+                    <h3 class="text-2xl font-bold text-pine mb-3">比较研究</h3>
+                    <p class="text-bamboo">
+                        对比中外古建筑的异同，分析中国古建筑在世界建筑史中的地位与价值。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 研究成果 -->
+    <section id="achievements" class="py-16 px-4 bg-pine/5">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-pine">
+                <i class="fa fa-trophy text-amber mr-2"></i>
+                重要研究成果
+            </h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                    <h3 class="text-2xl font-bold text-pine mb-4">基础理论体系构建</h3>
+                    <p class="text-bamboo mb-4">
+                        梁思成、刘敦桢等学者奠定中国古建筑研究基础，建立“营造学社”研究范式，厘清木构建筑的发展脉络，出版《中国建筑史》《清式营造则例》等经典著作。
+                    </p>
+                    <div class="text-amber font-bold">核心价值：确立中国古建筑研究的学科框架</div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                    <h3 class="text-2xl font-bold text-pine mb-4">数字化研究突破</h3>
+                    <p class="text-bamboo mb-4">
+                        利用BIM、三维激光扫描等技术，完成故宫、应县木塔等古建筑的数字化建模，实现建筑信息的精准采集与永久保存。
+                    </p>
+                    <div class="text-amber font-bold">核心价值：为修复与研究提供精准数据支撑</div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h3 class="text-2xl font-bold text-pine mb-4">非遗技艺研究</h3>
+                    <p class="text-bamboo mb-4">
+                        系统整理传统营造技艺的工艺流程，记录工匠口述史，出版《中国传统建筑营造技艺》等专著，推动技艺活态传承。
+                    </p>
+                    <div class="text-amber font-bold">核心价值：挽救濒临失传的传统营造技艺</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 研究趋势 -->
+    <section id="trends" class="py-16 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-pine">
+                <i class="fa fa-line-chart text-amber mr-2"></i>
+                未来研究趋势
+            </h2>
+            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-8">
+                <ul class="space-y-5">
+                    <li class="flex items-start">
+                        <i class="fa fa-arrow-circle-right text-amber mt-1 mr-4 text-xl"></i>
+                        <p class="text-bamboo text-lg">
+                            <span class="font-bold text-pine">跨学科融合：</span>结合考古学、材料学、计算机科学等多学科，开展古建筑的综合研究。
+                        </p>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-arrow-circle-right text-amber mt-1 mr-4 text-xl"></i>
+                        <p class="text-bamboo text-lg">
+                            <span class="font-bold text-pine">预防性保护研究：</span>从“修复”转向“预防”，研究古建筑的病害预警、日常维护体系。
+                        </p>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-arrow-circle-right text-amber mt-1 mr-4 text-xl"></i>
+                        <p class="text-bamboo text-lg">
+                            <span class="font-bold text-pine">地域建筑深耕：</span>聚焦少数民族、偏远地区的特色建筑，填补地域建筑研究空白。
+                        </p>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-arrow-circle-right text-amber mt-1 mr-4 text-xl"></i>
+                        <p class="text-bamboo text-lg">
+                            <span class="font-bold text-pine">应用转化研究：</span>将古建筑的结构智慧、生态理念应用于现代建筑设计，实现古为今用。
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-pine text-white py-8 px-4">
+        <div class="container mx-auto text-center">
+            <p class="mb-4">© 2025 古韵栖居 - 中国古代建筑学术研究</p>
+            <p class="text-bamboo text-sm">
+                探源古建之理，求索营造之道 · 传承中华建筑之美
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('py-2');
+                nav.classList.remove('py-3');
+            } else {
+                nav.classList.add('py-3');
+                nav.classList.remove('py-2');
+            }
+        });
+    </script>
+</body>
+</html>

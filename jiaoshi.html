@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>指导老师 - 中国古代建筑研究</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --amber: #D69E2E;
+            --pine: #2D3748;
+            --rice: #FAF6ED;
+            --bamboo: #718096;
+        }
+        body { background-color: var(--rice); font-family: "Ma Shan Zheng", serif; }
+        .nav-link:hover { color: var(--amber)!important; }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="bg-pine text-white py-4 px-6 sticky top-0 z-10">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="p1.php" class="text-2xl font-bold flex items-center">
+                <i class="fa fa-home mr-2 text-amber"></i>返回首页
+            </a>
+            <h1 class="text-xl md:text-2xl">指导老师</h1>
+        </div>
+    </nav>
+
+    <!-- 核心内容 -->
+    <main class="container mx-auto py-12 px-6">
+        <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-lg p-8 text-center">
+            <img src="image/jiaoshi.jpg" alt="指导老师" class="rounded-full mx-auto border-4 border-amber mb-6">
+            <h2 class="text-3xl font-bold text-pine mb-4">姚争为 教授</h2>
+            <p class="text-bamboo text-xl mb-6">教学副院长</p>
+            
+            <div class="text-left space-y-4 text-bamboo">
+                <div class="flex items-center">
+                    <i class="fa fa-university text-amber text-xl w-8 text-center"></i>
+                    <span><strong class="text-pine">任职单位：</strong>杭州师范大学 信息科学与技术学院</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fa fa-book text-amber text-xl w-8 text-center"></i>
+                    <span><strong class="text-pine">研究方向：</strong>Web程序设计</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fa fa-envelope text-amber text-xl w-8 text-center"></i>
+                    <span><strong class="text-pine">办公邮箱：</strong>xxx@hznu.edu.cn</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fa fa-phone text-amber text-xl w-8 text-center"></i>
+                    <span><strong class="text-pine">办公电话：</strong>020-XXXXXXX</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fa fa-comment text-amber text-xl w-8 text-center"></i>
+                    <span><strong class="text-pine">指导内容：</strong>项目选题、网页制作指导、内容审核</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-pine text-white py-6 mt-12">
+        <div class="container mx-auto text-center text-bamboo">
+            <p>© 2025 中国古代建筑研究项目 | 指导老师</p>
+        </div>
+    </footer>
+</body>
+</html>

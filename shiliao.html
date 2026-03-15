@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中国古代建筑史料 - 古韵栖居</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cinnabar: '#E53E3E', 
+                        pine: '#2D3748', 
+                        bamboo: '#718096', 
+                        rice: '#FAF6ED', 
+                        amber: '#D69E2E', 
+                    },
+                    fontFamily: {
+                        chinese: ['"Ma Shan Zheng"', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
+            .bg-texture {
+                background-image: url('image/shiliao.jpg');
+                background-size: cover;
+                background-position: center;
+                background-blend-mode: overlay;
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+</head>
+<body class="bg-rice font-chinese">
+    <!-- 导航栏 -->
+    <nav class="sticky top-0 z-50 bg-pine/95 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="p1.php" class="text-2xl md:text-3xl font-bold flex items-center">
+                <i class="fa fa-home mr-2 text-amber"></i>
+                <span>古韵栖居</span>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="p1.php" class="nav-link hover:text-amber transition-colors py-2 border-b-2 border-amber">首页</a>
+                <a href="#categories" class="nav-link hover:text-amber transition-colors py-2 border-b-2 border-transparent hover:border-amber">史料分类</a>
+                <a href="#represent" class="nav-link hover:text-amber transition-colors py-2 border-b-2 border-transparent hover:border-amber">代表文献</a>
+                <a href="#value" class="nav-link hover:text-amber transition-colors py-2 border-b-2 border-transparent hover:border-amber">史料价值</a>
+            </div>
+            <button id="menuBtn" class="md:hidden text-white focus:outline-none">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+        <div id="mobileMenu" class="md:hidden hidden bg-pine/98 text-white">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="p1.php" class="py-2 hover:text-amber transition-colors">首页</a>
+                <a href="#categories" class="py-2 hover:text-amber transition-colors">史料分类</a>
+                <a href="#represent" class="py-2 hover:text-amber transition-colors">代表文献</a>
+                <a href="#value" class="py-2 hover:text-amber transition-colors">史料价值</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 首页横幅 -->
+    <section id="home" class="relative h-[70vh] md:h-[80vh] bg-texture bg-pine/70 flex items-center justify-center">
+        <div class="absolute inset-0 bg-pine/50"></div>
+        <div class="relative text-center px-4 text-white">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 text-shadow">中国古代建筑史料</h1>
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto text-shadow">典籍载匠心，笔墨传古建</p>
+            <a href="#categories" class="mt-8 inline-block bg-amber/90 hover:bg-amber text-pine font-bold py-3 px-8 rounded-lg transition-all">
+                探索史料脉络
+            </a>
+        </div>
+    </section>
+
+    <!-- 史料分类 -->
+    <section id="categories" class="py-16 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-pine">
+                <i class="fa fa-book text-amber mr-2"></i>
+                建筑史料核心分类
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- 官修典制 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 card-hover">
+                    <i class="fa fa-bookmark text-4xl text-amber mb-4"></i>
+                    <h3 class="text-2xl font-bold text-pine mb-3">官修典制类</h3>
+                    <p class="text-bamboo">
+                        朝廷颁布的建筑规制典籍，如《营造法式》《工部工程做法则例》，规范建筑形制、工艺、用料，是官方建筑标准。
+                    </p>
+                </div>
+                <!-- 地方府志 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 card-hover">
+                    <i class="fa fa-map text-4xl text-amber mb-4"></i>
+                    <h3 class="text-2xl font-bold text-pine mb-3">地方府志类</h3>
+                    <p class="text-bamboo">
+                        各地方志中记载的地域建筑信息，如《江南通志》《洛阳伽蓝记》，记录地方建筑特色与历史变迁。
+                    </p>
+                </div>
+                <!-- 文人笔记 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 card-hover">
+                    <i class="fa fa-pencil text-4xl text-amber mb-4"></i>
+                    <h3 class="text-2xl font-bold text-pine mb-3">文人笔记类</h3>
+                    <p class="text-bamboo">
+                        文人墨客记录的建筑见闻，如《东京梦华录》《长物志》，展现建筑的人文风貌与生活场景。
+                    </p>
+                </div>
+                <!-- 匠作抄本 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 card-hover">
+                    <i class="fa fa-file-text text-4xl text-amber mb-4"></i>
+                    <h3 class="text-2xl font-bold text-pine mb-3">匠作抄本类</h3>
+                    <p class="text-bamboo">
+                        民间工匠传承的手抄本、口诀，记录实操工艺与营造经验，是古代建筑技艺的民间传承载体。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 代表文献 -->
+    <section id="represent" class="py-16 px-4 bg-pine/5">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-pine">
+                <i class="fa fa-book-open text-amber mr-2"></i>
+                经典建筑史料文献
+            </h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                    <h3 class="text-2xl font-bold text-pine mb-4">《营造法式》（宋）</h3>
+                    <p class="text-bamboo mb-4">
+                        李诫编修，中国第一部官方建筑技术专著，系统记载木作、瓦作、石作等工艺，明确材份制，是宋代建筑技术的集大成之作。
+                    </p>
+                    <div class="text-amber font-bold">核心价值：确立古代建筑标准化体系</div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                    <h3 class="text-2xl font-bold text-pine mb-4">《工部工程做法则例》（清）</h3>
+                    <p class="text-bamboo mb-4">
+                        清代官方建筑规范，统一官式建筑的形制、用料、工价，将建筑等级细化，是明清官式建筑的重要参考。
+                    </p>
+                    <div class="text-amber font-bold">核心价值：规范清代皇家建筑营造</div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h3 class="text-2xl font-bold text-pine mb-4">《园冶》（明）</h3>
+                    <p class="text-bamboo mb-4">
+                        计成著，中国第一部园林营造专著，详述园林选址、布局、叠山、理水，体现中式园林“虽由人作，宛自天开”的理念。
+                    </p>
+                    <div class="text-amber font-bold">核心价值：奠定中式园林理论基础</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 史料价值 -->
+    <section id="value" class="py-16 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-pine">
+                <i class="fa fa-diamond text-amber mr-2"></i>
+                建筑史料的核心价值
+            </h2>
+            <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-8">
+                <ul class="space-y-5">
+                    <li class="flex items-start">
+                        <i class="fa fa-check-circle text-amber mt-1 mr-4 text-xl"></i>
+                        <p class="text-bamboo text-lg">
+                            <span class="font-bold text-pine">技术传承：</span>完整保留古代建筑的营造工艺、结构原理，为现代修复与研究提供直接依据。
+                        </p>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-check-circle text-amber mt-1 mr-4 text-xl"></i>
+                        <p class="text-bamboo text-lg">
+                            <span class="font-bold text-pine">历史佐证：</span>印证不同朝代的建筑风格、社会经济水平，补充历史研究的实物与文字证据。
+                        </p>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-check-circle text-amber mt-1 mr-4 text-xl"></i>
+                        <p class="text-bamboo text-lg">
+                            <span class="font-bold text-pine">文化溯源：</span>反映古代的礼制、审美、民俗文化，是中华建筑文化的文字载体。
+                        </p>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-check-circle text-amber mt-1 mr-4 text-xl"></i>
+                        <p class="text-bamboo text-lg">
+                            <span class="font-bold text-pine">实践指导：</span>为古建筑保护、复建提供精准的形制与工艺参考，避免盲目修复。
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-pine text-white py-8 px-4">
+        <div class="container mx-auto text-center">
+            <p class="mb-4">© 2025 古韵栖居 - 中国古代建筑史料研究</p>
+            <p class="text-bamboo text-sm">
+                典籍载匠心，笔墨传古建 · 传承中华建筑之美
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('py-2');
+                nav.classList.remove('py-3');
+            } else {
+                nav.classList.add('py-3');
+                nav.classList.remove('py-2');
+            }
+        });
+    </script>
+</body>
+</html>

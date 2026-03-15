@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录 - 古韵栖居</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --amber: #D69E2E;
+            --pine: #2D3748;
+            --rice: #FAF6ED;
+            --bamboo: #718096;
+        }
+        body { 
+            background-color: var(--rice); 
+            font-family: "Ma Shan Zheng", serif; 
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="bg-pine text-white py-4 px-6 sticky top-0 z-10">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="p1.php" class="text-2xl font-bold flex items-center">
+                <i class="fa fa-home mr-2 text-amber"></i>返回首页
+            </a>
+            <h1 class="text-xl md:text-2xl">用户登录</h1>
+        </div>
+    </nav>
+
+    <main class="container mx-auto py-12 px-6">
+        <div class="max-w-md mx-auto bg-white rounded-xl shadow-lg p-8">
+            <h2 class="text-3xl font-bold text-pine mb-6 text-center">账号登录</h2>
+            
+            <!-- 错误提示 -->
+            <?php if (isset($_GET['error'])) { ?>
+                <div class="bg-red-100 text-red-700 p-3 rounded-lg mb-4 text-center">
+                    <?php echo $_GET['error']; ?>
+                </div>
+            <?php } ?>
+            
+            <form action="login.php" method="POST">
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-pine font-bold mb-2" for="username">
+                            <i class="fa fa-user text-amber mr-2"></i>用户名
+                        </label>
+                        <input type="text" id="username" name="username" class="w-full px-4 py-2 border border-bamboo rounded-lg focus:outline-none focus:border-amber" placeholder="请输入用户名" required>
+                    </div>
+                    <div>
+                        <label class="block text-pine font-bold mb-2" for="password">
+                            <i class="fa fa-lock text-amber mr-2"></i>密码
+                        </label>
+                        <input type="password" id="password" name="password" class="w-full px-4 py-2 border border-bamboo rounded-lg focus:outline-none focus:border-amber" placeholder="请输入密码" required>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="bg-amber hover:bg-amber/80 text-pine font-bold py-3 px-8 rounded-lg transition-colors w-full">
+                            登录
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="mt-6 text-center text-bamboo">
+                <p>还没有账号？<a href="register.html" class="text-amber hover:underline">立即注册</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-pine text-white py-6 mt-12">
+        <div class="container mx-auto text-center text-bamboo">
+            <p>© 2025 古韵栖居 | 用户登录</p>
+        </div>
+    </footer>
+</body>
+</html>
