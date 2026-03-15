@@ -1,12 +1,410 @@
-<!DOCTYPE html>
+git add index.html<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>Web_History 项目</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中国古代建筑成就</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", "SimSun", serif;
+        }
+        body {
+            background-color: #f8f5f0;
+            color: #333;
+            line-height: 1.6;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23d9c9b8' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        .container {
+            width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: #8b4513;
+            color: #fff;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        .nav-list {
+            display: flex;
+            list-style: none;
+        }
+        .nav-item {
+            margin-left: 30px;
+        }
+        .nav-link {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.3s;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        .nav-link:hover {
+            background-color: #a0522d;
+            transform: translateY(-2px);
+        }
+        .auth-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        .btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        .btn-primary {
+            background-color: #d2b48c;
+            color: #333;
+            font-weight: 500;
+        }
+        .btn-primary:hover {
+            background-color: #e6c893;
+            transform: translateY(-2px);
+        }
+        .user-info {
+            color: #fff;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .user-name {
+            color: #e6c893;
+            font-weight: 500;
+        }
+
+        .banner {
+            height: 400px;
+            background: url("https://picsum.photos/id/1048/1200/400") center center no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin: 0px 0;
+        }
+        .banner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .banner-text {
+            position: relative;
+            text-align: center;
+            color: #fff;
+        }
+        .banner-title {
+            font-size: 48px;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .banner-subtitle {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* 内容模块样式 */
+        .section {
+            padding: 60px 0;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            color: #8b4513;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #d2b48c;
+        }
+        .modules {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        .module-card {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+        }
+        .module-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+        .module-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        .module-content {
+            padding: 25px;
+        }
+        .module-title {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .module-title::before {
+            content: "";
+            width: 4px;
+            height: 20px;
+            background-color: #8b4513;
+            margin-right: 10px;
+            border-radius: 2px;
+        }
+        .module-desc {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .module-link {
+            display: inline-block;
+            color: #8b4513;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
+            border: 1px solid #8b4513;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        .module-link:hover {
+            background-color: #8b4513;
+            color: #fff;
+        }
+
+        /* 底部样式 */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 0;
+            margin-top: 40px;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .footer-logo {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #d2b48c;
+        }
+        .footer-desc {
+            max-width: 400px;
+            color: #ccc;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .footer-links {
+            display: flex;
+            gap: 40px;
+        }
+        .link-group h4 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #d2b48c;
+            position: relative;
+            padding-bottom: 8px;
+        }
+        .link-group h4::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background-color: #d2b48c;
+        }
+        .link-list {
+            list-style: none;
+        }
+        .link-item {
+            margin-bottom: 10px;
+        }
+        .link {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .link:hover {
+            color: #d2b48c;
+            padding-left: 5px;
+        }
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #aaa;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
+    <!-- 头部导航 -->
+    <header>
+      <div class="container header-content">
+        <div class="logo">中国古代建筑成就</div>
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#" class="nav-link">首页</a></li>
+          <li class="nav-item"><a href="#section-category" class="nav-link">建筑分类</a></li>
+          <li class="nav-item"><a href="#section-achievement" class="nav-link">成就展示</a></li>
+          <li class="nav-item"><a href="#section-achievement" class="nav-link">关于项目</a></li>
+        </ul>
+        
+       <!-- 登录/注册/用户信息切换 -->
+<?php if (isset($_SESSION['username'])) { ?>
+    <!-- 已登录状态 -->
+    <div class="user-info">
+        <span class="user-name">欢迎，<?php echo $_SESSION['username']; ?></span>
+        <!-- 新增：管理员显示后台入口 -->
+        <?php if ($_SESSION['is_admin'] == 1): ?>
+            <a href="admin_dashboard.php" class="btn btn-primary">管理员后台</a>
+        <?php endif; ?>
+        <a href="logout.php" class="btn btn-primary">退出登录</a>
+    </div>
+<?php } else { ?>
+    <!-- 未登录状态 -->
+    <div class="auth-buttons">
+      <a href="login.html" class="btn btn-primary">登录</a>
+      <a href="register.html" class="btn btn-primary">注册</a>
+    </div>
+<?php } ?>
+      </div>
+    </header>
 
-    <h1>Web_History 项目在线预览</h1>
+    <!-- 横幅区域 -->
+    <div class="banner">
+        <div class="banner-overlay"></div>
+        <div class="banner-text">
+            <h1 class="banner-title">传承古建智慧 彰显华夏文明</h1>
+            <p class="banner-subtitle">探索民宿、官府、皇宫、桥梁四大建筑类型，领略1911年前中国古代建筑的辉煌成就与独特魅力</p>
+        </div>
+    </div>
 
+    <section class="section" id="section-category">
+        <div class="container">
+            <h2 class="section-title">建筑分类展示</h2>
+            <div class="modules">
+                <!-- 民宿模块 -->
+               <div class="module-card">
+                     <img src="image/minsu.jpg" alt="中国古代民宿" class="module-img">
+                     <div class="module-content">
+                         <h3 class="module-title">民宿建筑</h3>
+                         <p class="module-desc">承载民间生活智慧的居所，融合地域气候与文化特色，以简洁实用的布局、因地制宜的构造，展现古代百姓的居住美学。</p>
+                         <a href="minsu.html" class="module-link">查看详情</a>
+                     </div>
+                 </div>
+                <!-- 官府模块 -->
+                <div class="module-card">
+                    <img src="image/guanfu.jpg" alt="中国古代官府" class="module-img">
+                    <div class="module-content">
+                        <h3 class="module-title">官府建筑</h3>
+                        <p class="module-desc">体现封建礼制与行政权威的场所，布局严谨对称，形制规整有序，兼具办公与礼仪功能，彰显古代官僚体系的等级秩序。</p>
+                        <a href="guanfu.html" class="module-link">查看详情</a>
+                    </div>
+                </div>
+                <!-- 皇宫模块 -->
+                <div class="module-card">
+                    <img src="image/huanggong.jpg" alt="中国古代皇宫" class="module-img">
+                    <div class="module-content">
+                        <h3 class="module-title">皇宫建筑</h3>
+                        <p class="module-desc">古代建筑的巅峰之作，以宏伟规制、金碧辉煌的装饰、严格的中轴对称布局，象征皇权至高无上，凝聚无数工匠的智慧结晶。</p>
+                        <a href="huanggong.html" class="module-link">查看详情</a>
+                    </div>
+                </div>
+                <!-- 桥梁模块 -->
+                <div class="module-card">
+                    <img src="image/qiaoliang.jpg" alt="中国古代桥梁" class="module-img">
+                    <div class="module-content">
+                        <h3 class="module-title">桥梁建筑</h3>
+                        <p class="module-desc">跨越江河的交通枢纽，集实用性与艺术性于一体，石拱桥、木梁桥等多种形制，展现古代工程技术的卓越成就与美学追求。</p>
+                        <a href="qiaoliang.html" class="module-link">查看详情</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部区域 -->
+    <footer>
+        <div class="container" id="section-achievement">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="footer-logo">中国古代建筑成就</div>
+                    <p class="footer-desc">本网站为《Web程序设计》课程设计作品，聚焦中国古代四大建筑类型，旨在通过数字化方式传承和展示中华优秀传统文化遗产。</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>相关资源</h4>
+                        <ul class="link-list">
+                            <li class="link-item"><a href="shiliao.html" class="link">建筑史料</a></li>
+                            <li class="link-item"><a href="gongyi.html" class="link">工艺技术</a></li>
+                            <li class="link-item"><a href="baohu.html" class="link">保护现状</a></li>
+                            <li class="link-item"><a href="yanjiu.html" class="link">学术研究</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h4>联系我们</h4>
+                        <ul class="link-list">
+                            <li class="link-item"><a href="tuandui.html" class="link">项目团队</a></li>
+                            <li class="link-item"><a href="jiaoshi.html" class="link">指导老师</a></li>
+                            <li class="link-item"><a href="yijian.php" class="link">意见反馈</a></li>
+                            <li class="link-item"><a href="jishu.html" class="link">技术支持</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2025 中国古代建筑成就 Web课程设计 | 版权所有
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 原按钮点击跳转（保留，防止旧代码失效）
+        document.getElementById('loginBtn') && document.getElementById('loginBtn').addEventListener('click', function() {
+            window.location.href = 'login.html';
+        });
+        document.getElementById('registerBtn') && document.getElementById('registerBtn').addEventListener('click', function() {
+            window.location.href = 'register.html';
+        });
+    </script>
 </body>
 </html>
